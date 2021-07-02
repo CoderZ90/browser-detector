@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Coding By Aditya - youtube.com/CodingFire -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Browser Detection In Javascript</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header><h2>Browser:</h2></header>
+      <div class="logos">
+        <img src="chrome.png" class="chrome" name="chrome" alt="chrome" title="chrome">
+        <img src="edge.png" class="edge" name="edge" alt="edge" title="edge">
+        <img src="firefox.png" class="firefox" name="firefox" alt="firefox" title="firefox">
+        <img src="opera.png" class="opera" name="opera" alt="opera" title="opera">
+        <img src="safari.png" class="safari" name="safari" alt="safari" title="safari">
+      </div>
+    </div>
+
+    <script>
+      let userAgent = navigator.userAgent;
+      let browser;
+      if (userAgent.match(/chrome|chromium|crios/i)) {
+        browser = 'chrome';
+      } else if (userAgent.match(/edg/i)) {
+        browser = 'edge';
+      } else if (userAgent.match(/firefox|fxios/i)) {
+        browser = 'firefox';
+      } else if (userAgent.match(/opr/i)) {
+        browser = 'opera';
+      } else if (userAgent.match(/safari/i)) {
+        browser = 'safari';
+      }
+      const logos = document.querySelector(`.logos .${browser}`);
+      if (logos != '') {
+        logos.style.opacity = 1;
+      }
+    </script>
+
+  </body>
+</html>
